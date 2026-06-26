@@ -18,17 +18,17 @@ export class SuperheroesController {
   }
 
   @Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: string) {
-    return this.superheroesService.findOne(+id);
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.superheroesService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id', ParseIntPipe) id: string, @Body() updateSuperheroDto: UpdateSuperheroDto) {
-    return this.superheroesService.update(+id, updateSuperheroDto);
+  update(@Param('id', ParseIntPipe) id: number, @Body() updateSuperheroDto: UpdateSuperheroDto) {
+    return this.superheroesService.update(id, updateSuperheroDto);
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: string) {
-    return this.superheroesService.remove(+id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.superheroesService.remove(id);
   }
 }
