@@ -8,6 +8,7 @@ export class SuperheroesService {
   constructor(private readonly prisma: PrismaService){}
   
   async create(createSuperheroDto: CreateSuperheroDto) {
+    
     return this.prisma.superhero.create({
       data: createSuperheroDto
     })

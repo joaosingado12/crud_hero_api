@@ -1,17 +1,17 @@
-import { IsEmpty, IsOptional, IsString} from "class-validator"
+import { IsEmpty, IsOptional, IsString, IsNotEmpty} from "class-validator"
 
 export class CreateSuperheroDto {
 
     @IsString({ message: 'O nome deve ser um texto' })
-    @IsEmpty({ message: 'O nome é obrigatório' })
-    name: string
+    @IsNotEmpty({ message: 'O nome é obrigatório' })
+    name: string 
 
     @IsString()
     @IsOptional()
     realName?: string
     
     @IsString()
-    @IsEmpty({ message: 'O superpoder é obrigatório' })
+    @IsNotEmpty({ message: 'O superpoder é obrigatório' })
     superPower: string
 
     @IsString()
