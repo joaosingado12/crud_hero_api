@@ -34,7 +34,7 @@ export class SuperheroesService {
 
     return this.prisma.superhero.update({
       where: {id},
-      data: UpdateSuperheroDto,
+      data: updateSuperheroDto,
     })
   }
 
